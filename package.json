@@ -1,0 +1,14 @@
+{
+  "name": "catreader",
+  "version": "1.0.0",
+  "description": "Read catalina properties",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "properties-reader": "^2.1.1"
+  }
+}
