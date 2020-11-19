@@ -1,7 +1,9 @@
 var propertiesReader = require('properties-reader');
 
-const source = './catalina.properties'
-const dest = './catalina.1.properties'
+var myArgs = process.argv.slice(2);
+
+const source = myArgs[0]
+const dest = myArgs[1]
 
 
 const getPropertiesMap = filename => {
@@ -22,6 +24,8 @@ const comp = getPropertiesMap(dest)
 Object.keys(original).forEach( key => {
   if(!comp.hasOwnProperty(key)){
     console.log('missing: ' + key)
+  } else if (original[key] !== comp[key]) {
+    console.log(`diff on key ${key}: original: ${original[key]} - comp: ${comp[key]}`)
   }
 })
 
